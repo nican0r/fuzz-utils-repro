@@ -8,10 +8,10 @@
 		"corpusDirectory": "medusa",
 		"coverageEnabled": true,
 		"deploymentOrder": [
-			"MedusaCounter"
+			"FuzzCounter"
 		],
 		"targetContracts": [
-			"MedusaCounter"
+			"FuzzCounter"
 		],
 		"targetContractsBalances": [],
 		"constructorArgs": {},
@@ -71,7 +71,7 @@
 	"compilation": {
 		"platform": "crytic-compile",
 		"platformConfig": {
-			"target": "./test/MedusaCounter.sol",
+			"target": "./test/FuzzCounter.sol",
 			"solcVersion": "",
 			"exportDirectory": "",
 			"args": []
