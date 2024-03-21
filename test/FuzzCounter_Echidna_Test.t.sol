@@ -2,13 +2,13 @@
 pragma solidity ^0.8.13;
 import "forge-std/Test.sol";
 import "forge-std/console2.sol";
-import ".MedusaCounter.sol";
+import ".FuzzCounter.sol";
 
-contract MedusaCounter_Medusa_Test is Test {
-    MedusaCounter target;
+contract FuzzCounter_Echidna_Test is Test {
+    FuzzCounter target;
 
     function setUp() public {
-        target = new MedusaCounter();
+        target = new FuzzCounter();
     }
 }
 

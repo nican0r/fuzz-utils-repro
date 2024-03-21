@@ -19,19 +19,22 @@
 </code>
 <br />
 
-<b>/Users/nelsonpereira/Documents/GitHub/Auditing/Fuzzy/Blogs/Foundry_Test_Tools/foundry_test_tools/test/MedusaCounter.sol</b>
+<b>/Users/nelsonpereira/Documents/GitHub/Auditing/Fuzzy/Blogs/Foundry_Test_Tools/foundry_test_tools/test/FuzzCounter.sol</b>
 <code>
   1 |     | <span class='neutral'>// SPDX-License-Identifier: UNLICENSED</span>
   2 |     | <span class='neutral'>pragma solidity ^0.8.13;</span>
   3 |     | <span class='neutral'></span>
   4 |     | <span class='neutral'>import {Counter} from &quot;../src/Counter.sol&quot;;</span>
   5 |     | <span class='neutral'></span>
-  6 | *   | <span class='executed'>contract MedusaCounter is Counter {</span>
-  7 |     | <span class='unexecuted'>    function invariant_neverZero() public view returns (bool) {</span>
-  8 |     | <span class='unexecuted'>        return number != 0;</span>
-  9 |     | <span class='neutral'>    }</span>
- 10 |     | <span class='neutral'>}</span>
- 11 |     | <span class='neutral'></span>
+  6 |     | <span class='neutral'>// running echinda: echidna ./test/FuzzCounter.sol --contract FuzzCounter --config echidna.yaml</span>
+  7 |     | <span class='neutral'>// generating foundry tests medusa: fuzz-utils ./test/FuzzCounter.sol --corpus-dir ./medusa --contract &quot;FuzzCounter&quot; --test-directory &quot;./test/&quot; --inheritance-path &quot;.&quot; --fuzzer medusa</span>
+  8 |     | <span class='neutral'>// generating foundry tests echidna: fuzz-utils ./test/FuzzCounter.sol --corpus-dir ./echidna --contract &quot;FuzzCounter&quot; --test-directory &quot;./test/&quot; --inheritance-path &quot;.&quot; --fuzzer echidna</span>
+  9 | *   | <span class='executed'>contract FuzzCounter is Counter {</span>
+ 10 |     | <span class='unexecuted'>    function invariant_neverZero() public view returns (bool) {</span>
+ 11 |     | <span class='unexecuted'>        return number != 0;</span>
+ 12 |     | <span class='neutral'>    }</span>
+ 13 |     | <span class='neutral'>}</span>
+ 14 |     | <span class='neutral'></span>
 
 </code>
 <br />
