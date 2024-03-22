@@ -1,0 +1,41 @@
+<style> code { white-space: pre-wrap; display: block; background-color: #eee; }.executed { background-color: #afa; }.reverted { background-color: #ffa; }.unexecuted { background-color: #faa; }.neutral { background-color: #eee; }</style><b>/Users/nelsonpereira/Documents/GitHub/Auditing/Fuzzy/Blogs/Foundry_Test_Tools/foundry_test_tools/src/Counter.sol</b>
+<code>
+  1 |     | <span class='neutral'>// SPDX-License-Identifier: UNLICENSED</span>
+  2 |     | <span class='neutral'>pragma solidity ^0.8.13;</span>
+  3 |     | <span class='neutral'></span>
+  4 |     | <span class='unexecuted'>contract Counter {</span>
+  5 |     | <span class='unexecuted'>    uint256 public number = 5;</span>
+  6 |     | <span class='neutral'></span>
+  7 | *   | <span class='executed'>    function setNumber(uint256 newNumber) public {</span>
+  8 | *   | <span class='executed'>        number = newNumber;</span>
+  9 |     | <span class='neutral'>    }</span>
+ 10 |     | <span class='neutral'></span>
+ 11 | *   | <span class='executed'>    function increment() public {</span>
+ 12 | *   | <span class='executed'>        number++;</span>
+ 13 |     | <span class='neutral'>    }</span>
+ 14 |     | <span class='neutral'>}</span>
+ 15 |     | <span class='neutral'></span>
+
+</code>
+<br />
+
+<b>/Users/nelsonpereira/Documents/GitHub/Auditing/Fuzzy/Blogs/Foundry_Test_Tools/foundry_test_tools/test/FuzzCounter.sol</b>
+<code>
+  1 |     | <span class='neutral'>// SPDX-License-Identifier: UNLICENSED</span>
+  2 |     | <span class='neutral'>pragma solidity ^0.8.13;</span>
+  3 |     | <span class='neutral'></span>
+  4 |     | <span class='neutral'>import {Counter} from &quot;../src/Counter.sol&quot;;</span>
+  5 |     | <span class='neutral'></span>
+  6 |     | <span class='neutral'>// running echinda: echidna ./test/FuzzCounter.sol --contract FuzzCounter --config echidna.yaml</span>
+  7 |     | <span class='neutral'>// generating foundry tests medusa: fuzz-utils ./test/FuzzCounter.sol --corpus-dir ./medusa --contract &quot;FuzzCounter&quot; --test-directory &quot;./test/&quot; --inheritance-path &quot;.&quot; --fuzzer medusa</span>
+  8 |     | <span class='neutral'>// generating foundry tests echidna: fuzz-utils ./test/FuzzCounter.sol --corpus-dir ./echidna --contract &quot;FuzzCounter&quot; --test-directory &quot;./test/&quot; --inheritance-path &quot;.&quot; --fuzzer echidna</span>
+  9 | *   | <span class='executed'>contract FuzzCounter is Counter {</span>
+ 10 |     | <span class='unexecuted'>    function invariant_neverZero() public view returns (bool) {</span>
+ 11 |     | <span class='unexecuted'>        return number != 0;</span>
+ 12 |     | <span class='neutral'>    }</span>
+ 13 |     | <span class='neutral'>}</span>
+ 14 |     | <span class='neutral'></span>
+
+</code>
+<br />
+

@@ -1,0 +1,16 @@
+TN:
+SF:/Users/nelsonpereira/Documents/GitHub/Auditing/Fuzzy/Blogs/Foundry_Test_Tools/foundry_test_tools/src/Counter.sol
+DA:4,0
+DA:5,0
+DA:7,11
+DA:8,2
+DA:11,3
+DA:12,15
+end_of_record
+
+SF:/Users/nelsonpereira/Documents/GitHub/Auditing/Fuzzy/Blogs/Foundry_Test_Tools/foundry_test_tools/test/FuzzCounter.sol
+DA:9,39
+DA:10,0
+DA:11,0
+end_of_record
+
