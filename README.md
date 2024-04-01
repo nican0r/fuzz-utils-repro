@@ -1,66 +1,15 @@
-## Foundry
+Repo for reproducing issue related to fuzz-utils automated foundry test generation a failing before call sequence with echidna vs failing after call sequence with medusa. 
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+To run echidna use: 
+`echidna ./test/FuzzCounter.sol --contract FuzzCounter --config echidna.yaml`
+- this fails with the following error before a call sequence is generated
+<img width="1101" alt="image" src="https://github.com/nican0r/fuzz-utils-repro/assets/94120714/27fe3d61-b399-40f9-a9d1-416aa5d77fac">
 
-Foundry consists of:
+To run medusa use: 
+`medusa fuzz`
+- this only fails after a call sequence is generated
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+<img width="1095" alt="image" src="https://github.com/nican0r/fuzz-utils-repro/assets/94120714/470c7b41-6fc8-418f-8d44-a670222e0b19">
 
-## Documentation
 
-https://book.getfoundry.sh/
 
-## Usage
-
-### Build
-
-```shell
-$ forge build
-```
-
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
